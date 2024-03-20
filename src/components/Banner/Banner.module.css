@@ -1,0 +1,99 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1250px;
+  min-width: 300px;
+  border-radius: 8px;
+  background-color: #003e49;
+  filter: drop-shadow(0 3px 8px #000000 8%);
+}
+
+.title_section {
+  position: relative;
+  width: 100%;
+  min-height: 199px;
+  background-image: url('../../assets/@1920 - Wallpaper.svg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.title_text {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text_section {
+  width: 100%;
+  padding: 24px;
+  color: #ffffff;
+  flex-shrink: 2.25;
+}
+
+.text_section > p {
+  font-size: 16px;
+}
+
+.text_section > ul {
+  font-size: 16px;
+  margin-left: 24px;
+  margin-top: 16px;
+}
+
+.banner_button {
+  width: 279px;
+  height: 48px;
+  padding: 14px 16px;
+  gap: 8px;
+  border-radius: 8px;
+  border: none;
+  color: #008096;
+  background-color: #ffffff;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 24px;
+  transition: background-color 0.2s ease;
+}
+
+.banner_button:hover {
+  background-color: #e1f8fb;
+}
+
+@media only screen and (min-width: 961px) {
+  .banner {
+    flex-direction: row;
+    align-items: start;
+    min-height: fit-content;
+  }
+
+  .title_section {
+    height: inherit;
+    max-width: 370px;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .text_section {
+    padding-right: 32px;
+  }
+
+  .banner_button {
+    width: 248px;
+    margin: 24px 24px 0 0;
+  }
+}

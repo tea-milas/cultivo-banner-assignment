@@ -1,18 +1,51 @@
 'use client'
 
+import { Banner } from '@/components/Banner/Banner'
+import { ContactFormDialog } from '@/components/ContactFormDialog'
+import { useState } from 'react'
 import styles from './page.module.css'
 
-export default function Home() {
+const Home = () => {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [showForm, setShowForm] = useState(false)
+  const onBannerButtonClick = () => {
+    setShowForm(true)
+  }
+  const bannerText = isFormSubmitted ? (
+    <p>
+      We received your message. Please feel free to get in touch again if you
+      would like to include any further details or ask any other questions. We
+      are eager to assist you.
+    </p>
+  ) : (
+    <>
+      <p>
+        Please get in touch if you would like an expert report for this site.
+        Benefits include:
+      </p>
+      <ul>
+        <li>Key insights from our expert team</li>
+        <li>An in-depth analysis of the site</li>
+        <li>Recommendations of next steps to take</li>
+      </ul>
+    </>
+  )
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-      </div>
+      <Banner
+        bannerText={bannerText}
+        buttonText={isFormSubmitted ? 'Send another message' : 'Get in touch'}
+        onClick={onBannerButtonClick}
+      />
 
-      <div className={styles.placeholder}>banner goes here</div>
+      <ContactFormDialog
+        open={showForm}
+        onClose={() => setShowForm(false)}
+        onFormSubmitted={() => setIsFormSubmitted(true)}
+      />
     </main>
   )
 }
+
+export default Home

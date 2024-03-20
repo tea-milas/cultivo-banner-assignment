@@ -83,7 +83,9 @@
   }
 
   .title_section {
-    height: inherit;
+    flex: 1 1 35%;
+    height: 100%;
+    background-size: cover;
     max-width: 370px;
     border-radius: 8px 0 0 8px;
   }
